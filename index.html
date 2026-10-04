@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast — погода</title>
+  <meta name="description" content="Современный сайт прогноза погоды">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="logo"><span>☁</span> SkyCast</div>
+      <div class="search">
+        <input id="cityInput" type="search" placeholder="Введите город..." autocomplete="off">
+        <button id="searchBtn">Найти</button>
+      </div>
+      <button id="themeBtn" class="icon-btn" title="Тема">☾</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">ПРОГНОЗ ПОГОДЫ</div>
+        <h1 id="locationName">Самара</h1>
+        <p id="locationMeta">Россия · обновление данных...</p>
+      </div>
+      <div class="updated" id="updated">—</div>
+    </section>
+
+    <section class="current-card">
+      <div class="current-main">
+        <div class="weather-icon" id="currentIcon">☀️</div>
+        <div>
+          <div class="temperature" id="currentTemp">—°</div>
+          <div class="condition" id="currentCondition">Загрузка...</div>
+          <div class="feels" id="feels">Ощущается как —</div>
+        </div>
+      </div>
+      <div class="metrics">
+        <div><span>💧 Влажность</span><b id="humidity">—</b></div>
+        <div><span>💨 Ветер</span><b id="wind">—</b></div>
+        <div><span>🌡 Давление</span><b id="pressure">—</b></div>
+        <div><span>☀️ УФ-индекс</span><b id="uv">—</b></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Прогноз</h2>
+        <div class="tabs">
+          <button class="tab active" data-days="7">7 дней</button>
+          <button class="tab" data-days="16">16 дней</button>
+        </div>
+      </div>
+      <div id="forecast" class="forecast-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Погода на месяц</h2>
+        <span class="muted">календарный вид</span>
+      </div>
+      <div class="calendar">
+        <div class="weekdays">
+          <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </div>
+      <p class="note">Данные прогноза на дальние даты отображаются ориентировочно. Для точного долгосрочного прогноза используйте доступные данные метеосервиса.</p>
+    </section>
+
+    <section class="section info-grid">
+      <div class="info-card">
+        <h3>О восходе и закате</h3>
+        <div class="sun-row"><span>🌅 Восход</span><b id="sunrise">—</b></div>
+        <div class="sun-row"><span>🌇 Закат</span><b id="sunset">—</b></div>
+      </div>
+      <div class="info-card">
+        <h3>О проекте</h3>
+        <p>SkyCast — собственный погодный сайт с быстрым поиском городов и понятным прогнозом.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">SkyCast © 2026 · Сделано с помощью Open-Meteo</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
